@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TANISHQ – Fine Jewellery | Ultra Luxury Jewellery Experience</title>
+    <meta name="description" content="Where Elegance Becomes Eternal. Discover the Art of Fine Jewellery at TANISHQ — curated gold, diamond, and bridal collections.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ========== LUXURY LOADING SCREEN ========== -->
+    <div id="loader" class="loader" aria-hidden="true">
+        <div class="loader-content">
+            <div class="loader-emblem">✦</div>
+            <div class="loader-logo">
+                <span class="loader-brand">TANISHQ</span>
+            </div>
+            <p class="loader-tagline">Fine Jewellery</p>
+            <div class="loader-bar">
+                <div class="loader-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== PREMIUM STICKY NAVBAR ========== -->
+    <nav id="navbar" class="navbar" aria-label="Main Navigation">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-icon">✦</span>
+                <span class="logo-text">TANISHQ</span>
+                <span class="logo-sub">Fine Jewellery</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#collections" class="nav-link">Collections</a></li>
+                <li><a href="#new-arrivals" class="nav-link">New Arrivals</a></li>
+                <li><a href="#best-sellers" class="nav-link">Best Sellers</a></li>
+                <li><a href="#our-story" class="nav-link">Our Story</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-mobile-only"><a href="#preorder" class="nav-link nav-preorder">Pre-Order Enquiry</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="nav-icon-btn search-toggle" id="searchToggle" aria-label="Search Jewellery" title="Search Jewellery">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                </button>
+                <button class="nav-icon-btn wishlist-toggle" id="wishlistToggle" aria-label="Open Wishlist" title="My Wishlist">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                    <span class="wishlist-count" id="wishlistCount">0</span>
+                </button>
+                <a href="#preorder" class="nav-preorder desktop-only">Pre-Order</a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== SEARCH OVERLAY MODAL ========== -->
+    <div class="search-overlay" id="searchOverlay" aria-hidden="true">
+        <div class="search-overlay-inner">
+            <button class="search-close" id="searchClose" aria-label="Close Search">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <span class="section-tag">Maison Search</span>
+            <h2 class="search-overlay-title">Find Your Signature Piece</h2>
+            <div class="search-overlay-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" id="globalSearchInput" placeholder="Search necklaces, solitaire rings, bridal kundan..." autocomplete="off">
+                <button class="btn btn-primary" id="globalSearchBtn">Search</button>
+            </div>
+            <div class="search-quick-tags">
+                <span>Popular:</span>
+                <button class="quick-tag" data-search="Necklace">Necklaces</button>
+                <button class="quick-tag" data-search="Diamond">Diamond</button>
+                <button class="quick-tag" data-search="Ring">Solitaire Rings</button>
+                <button class="quick-tag" data-search="Bridal">Bridal Sets</button>
+                <button class="quick-tag" data-search="Bangle">Gold Bangles</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== CINEMATIC HERO SECTION ========== -->
+    <section id="home" class="hero">
+        <div class="hero-ambient-bg"></div>
+        <svg class="hero-curves" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M-120 720 C 320 520, 680 860, 1540 340" stroke="url(#heroCurveGold)" stroke-width="1"/>
+            <path d="M-80 220 C 440 420, 920 80, 1520 580" stroke="url(#heroCurveGold2)" stroke-width="0.8"/>
+            <defs>
+                <linearGradient id="heroCurveGold" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#D4AF37" stop-opacity="0"/>
+                    <stop offset="50%" stop-color="#E8D5A3" stop-opacity="0.22"/>
+                    <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="heroCurveGold2" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#B9974B" stop-opacity="0"/>
+                    <stop offset="55%" stop-color="#D4AF37" stop-opacity="0.14"/>
+                    <stop offset="100%" stop-color="#B9974B" stop-opacity="0"/>
+                </linearGradient>
+            </defs>
+        </svg>
+        <div class="hero-particles" id="heroParticles"></div>
+
+        <div class="container hero-container">
+            <div class="hero-editorial">
+                <div class="hero-badge reveal">
+                    <span class="badge-diamond">◆</span>
+                    <span>Haute Joaillerie • Maison Demo 2026</span>
+                    <span class="badge-diamond">◆</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">
+                        <span class="hero-word" style="--d: 0.08s">Where</span>
+                        <span class="hero-word" style="--d: 0.22s">Elegance</span>
+                    </span>
+                    <span class="title-line title-accent shimmer-text">
+                        <span class="hero-word" style="--d: 0.38s">Becomes</span>
+                        <span class="hero-word" style="--d: 0.54s">Eternal.</span>
+                    </span>
+                </h1>
+                <p class="hero-subtitle reveal">Discover the Art of Fine Jewellery.</p>
+                <p class="hero-desc reveal">
+                    Explore timeless creations crafted to celebrate your most beautiful moments.
+                </p>
+                <div class="hero-buttons reveal">
+                    <a href="#collections" class="btn btn-primary btn-shimmer">
+                        <span>Explore Collection</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#our-story" class="btn btn-secondary">
+                        <span>Discover More</span>
+                    </a>
+                </div>
+                <div class="hero-stats reveal">
+                    <div class="stat">
+                        <span class="stat-number" data-count="16">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Curated Creations</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="8">0</span>
+                        <span class="stat-label">Signature Categories</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="100">0</span><span class="stat-plus">%</span>
+                        <span class="stat-label">Bespoke Focus</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-showcase">
+                <div class="hero-circle-stage" id="heroStage">
+                    <div class="hero-circle-glow" aria-hidden="true"></div>
+                    <div class="hero-circle-ring-outer" aria-hidden="true"></div>
+                    <div class="hero-circle-ring" aria-hidden="true"></div>
+                    <div class="hero-circle-frame" id="heroBg">
+                        <img src="assets/images/hero-campaign-model.jpg" alt="Modern Indian fashion model in a black designer outfit wearing layered 22K gold necklaces, statement gold earrings, and a delicate gold bracelet" loading="eager">
+                        <div class="hero-circle-blend"></div>
+                    </div>
+                    <div class="hero-frame-caption">
+                        <span class="caption-tag">✦ Haute Campaign 2026</span>
+                        <p>Gold &amp; Diamond Couture</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#curated-categories" class="hero-scroll-indicator" aria-label="Scroll to explore">
+            <span>Scroll to Explore</span>
+            <div class="scroll-line"></div>
+        </a>
+    </section>
+
+    <!-- ========== CURATED CATEGORIES ========== -->
+    <section id="curated-categories" class="featured-categories">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Curated World</span>
+                <h2 class="section-title">Signature Categories</h2>
+                <div class="section-divider"><span class="divider-diamond">◇</span></div>
+            </div>
+            <div class="categories-grid reveal">
+                <a href="#collections" class="category-card" data-filter="gold">
+                    <div class="category-img">
+                        <img src="assets/images/gold-necklace-model.jpg" alt="Indian model wearing gold heritage necklace in black saree" loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>Gold Jewellery</h3>
+                        <p>Radiant Warmth</p>
+                    </div>
+                </a>
+                <a href="#collections" class="category-card" data-filter="diamond">
+                    <div class="category-img">
+                        <img src="assets/images/diamond-necklace-model.jpg" alt="Indian model wearing diamond necklace in black evening wear" loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>Diamond Jewellery</h3>
+                        <p>Eternal Brilliance</p>
+                    </div>
+                </a>
+                <a href="#collections" class="category-card" data-filter="bridal">
+                    <div class="category-img">
+                        <img src="assets/images/bridal-model.jpg" alt="Indian bride wearing maroon lehenga and heavy bridal gold jewellery" loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>Bridal Jewellery</h3>
+                        <p>Ceremonial Splendour</p>
+                    </div>
+                </a>
+                <a href="#collections" class="category-card" data-filter="necklaces">
+                    <div class="category-img">
+                        <img src="assets/images/hero-model.jpg" alt="Editorial portrait of Indian model wearing gold necklace" loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>Necklaces</h3>
+                        <p>Grace & Poise</p>
+                    </div>
+                </a>
+                <a href="#collections" class="category-card" data-filter="rings">
+                    <div class="category-img">
+                        <img src="assets/images/rings-hand-model.jpg" alt="Female hand model wearing diamond and gold rings on black velvet" loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>Rings</h3>
+                        <p>Symbols of Devotion</p>
+                    </div>
+                </a>
+                <a href="#collections" class="category-card" data-filter="earrings">
+                    <div class="category-img">
+                        <img src="assets/images/earrings-model.jpg" alt="Close-up portrait of Indian model wearing chandelier earrings" loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>Earrings</h3>
+                        <p>Luminous Drops</p>
+                    </div>
+                </a>
+                <a href="#collections" class="category-card" data-filter="bangles">
+                    <div class="category-img">
+                        <img src="assets/images/bangles-model.jpg" alt="Indian model wearing traditional gold bangles with black silk" loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>Bangles</h3>
+                        <p>Sculpted Heritage</p>
+                    </div>
+                </a>
+                <a href="#collections" class="category-card" data-filter="bracelets">
+                    <div class="category-img">
+                        <img src="assets/images/atelier-craft.jpg" alt="Fine gold and diamond bracelet on black velvet" loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>Bracelets</h3>
+                        <p>Refined Form</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== COLLECTIONS WITH SMART SEARCH & FILTER ========== -->
+    <section id="collections" class="collections">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">The Catalogue</span>
+                <h2 class="section-title">Luxury Collections</h2>
+                <div class="section-divider"><span class="divider-diamond">◇</span></div>
+                <p class="section-desc">Explore our curated demonstration catalogue. All prices shown in INR (₹) are indicative demonstration prices.</p>
+            </div>
+
+            <!-- Smart Search, Price Range & Sort Controls -->
+            <div class="catalogue-controls reveal">
+                <div class="controls-top-row">
+                    <div class="search-input-wrap">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        <input type="text" id="collectionSearch" placeholder="Search by product name or design..." aria-label="Search products">
+                    </div>
+                    <div class="select-wrap">
+                        <select id="priceRangeFilter" aria-label="Filter by price range">
+                            <option value="all">All Price Ranges</option>
+                            <option value="under-150k">Under ₹1,50,000</option>
+                            <option value="150k-300k">₹1,50,000 – ₹3,00,000</option>
+                            <option value="300k-450k">₹3,00,000 – ₹4,50,000</option>
+                            <option value="above-450k">Above ₹4,50,000</option>
+                        </select>
+                    </div>
+                    <div class="select-wrap">
+                        <select id="sortOrderFilter" aria-label="Sort products">
+                            <option value="featured">Sort: Featured</option>
+                            <option value="newest">Newest Products First</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                        </select>
+                    </div>
+                    <button class="btn-clear-filters" id="clearFiltersBtn">Clear Filters</button>
+                </div>
+
+                <div class="filter-bar">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="gold">Gold Jewellery</button>
+                    <button class="filter-btn" data-filter="diamond">Diamond Jewellery</button>
+                    <button class="filter-btn" data-filter="bridal">Bridal Jewellery</button>
+                    <button class="filter-btn" data-filter="necklaces">Necklaces</button>
+                    <button class="filter-btn" data-filter="rings">Rings</button>
+                    <button class="filter-btn" data-filter="earrings">Earrings</button>
+                    <button class="filter-btn" data-filter="bangles">Bangles</button>
+                    <button class="filter-btn" data-filter="bracelets">Bracelets</button>
+                </div>
+
+                <div class="results-meta">
+                    <span id="resultCount">Showing 16 of 16 pieces</span>
+                    <span class="demo-price-note">* Demo pricing for showcase purposes</span>
+                </div>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- Products injected by JS -->
+            </div>
+
+            <div class="empty-results" id="emptyResults" style="display: none;">
+                <span class="empty-diamond">◇</span>
+                <h3>No Pieces Match Your Selection</h3>
+                <p>Try adjusting your search query, category, or price filter.</p>
+                <button class="btn btn-secondary" id="resetEmptyFilters">Reset All Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TRENDING NOW ========== -->
+    <section id="trending" class="showcase-section bg-charcoal">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">In The Spotlight</span>
+                <h2 class="section-title">Trending Now</h2>
+                <div class="section-divider"><span class="divider-diamond">◇</span></div>
+                <p class="section-desc">Contemporary silhouettes and luminous statements captivating admirers this season.</p>
+            </div>
+            <div class="products-grid" id="trendingGrid"></div>
+        </div>
+    </section>
+
+    <!-- ========== EXCLUSIVE COLLECTION (EDITORIAL BANNER + GRID) ========== -->
+    <section id="exclusive" class="exclusive-section bg-deep">
+        <div class="container">
+            <div class="editorial-banner reveal">
+                <div class="editorial-banner-img">
+                    <img src="assets/images/diamond-necklace-model.jpg" alt="Indian model wearing diamond necklace in black evening wear" loading="lazy">
+                </div>
+                <div class="editorial-banner-content">
+                    <span class="section-tag">Atelier Edition</span>
+                    <h2>The Exclusive Collection</h2>
+                    <p>Limited-edition silhouettes where architectural form meets timeless warmth. Crafted to command attention with understated authority.</p>
+                    <a href="#preorder" class="btn btn-primary">Request Private Viewing</a>
+                </div>
+            </div>
+            <div class="products-grid" id="exclusiveGrid"></div>
+        </div>
+    </section>
+
+    <!-- ========== BRIDAL COLLECTION ========== -->
+    <section id="bridal" class="bridal-section bg-charcoal">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Ceremonial Grandeur</span>
+                <h2 class="section-title">The Bridal Collection</h2>
+                <div class="section-divider"><span class="divider-diamond">◇</span></div>
+                <p class="section-desc">Heirloom-inspired bridal ensembles designed to illuminate unforgettable celebrations.</p>
+            </div>
+            <div class="products-grid" id="bridalGrid"></div>
+        </div>
+    </section>
+
+    <!-- ========== NEW ARRIVALS ========== -->
+    <section id="new-arrivals" class="new-arrivals bg-deep">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Just Unveiled</span>
+                <h2 class="section-title">New Arrivals</h2>
+                <div class="section-divider"><span class="divider-diamond">◇</span></div>
+                <p class="section-desc">The latest creations from our studio — fresh expressions of modern luxury.</p>
+            </div>
+            <div class="arrivals-grid" id="arrivalsGrid"></div>
+        </div>
+    </section>
+
+    <!-- ========== BEST SELLERS ========== -->
+    <section id="best-sellers" class="best-sellers bg-charcoal">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Most Coveted</span>
+                <h2 class="section-title">Best Sellers</h2>
+                <div class="section-divider"><span class="divider-diamond">◇</span></div>
+                <p class="section-desc">Beloved icons celebrated for their enduring elegance and refined proportions.</p>
+            </div>
+            <div class="bestsellers-grid" id="bestsellersGrid"></div>
+        </div>
+    </section>
+
+    <!-- ========== OUR STORY (EDITORIAL LUXURY SECTION) ========== -->
+    <section id="our-story" class="our-story bg-deep">
+        <div class="container">
+            <div class="story-layout">
+                <div class="story-visuals reveal">
+                    <div class="story-img-main">
+                        <img src="assets/images/atelier-craft.jpg" alt="Fine gold and diamond jewellery craftsmanship on black velvet" loading="lazy">
+                    </div>
+                    <div class="story-img-accent">
+                        <img src="assets/images/earrings-model.jpg" alt="Indian model wearing gold and diamond chandelier earrings" loading="lazy">
+                    </div>
+                </div>
+                <div class="story-content reveal">
+                    <span class="section-tag">Our Story</span>
+                    <h2 class="story-headline">An Art of Elegance.<br><span class="title-accent">A Legacy of Beauty.</span></h2>
+                    <div class="section-divider section-divider-left"><span class="divider-diamond">◇</span></div>
+                    <p class="story-lead">
+                        Every creation begins as a quiet dialogue between form, light, and emotion. At TANISHQ, our design philosophy honours the poise of classical artistry while embracing contemporary restraint.
+                    </p>
+                    <div class="story-pillars">
+                        <div class="story-pillar">
+                            <h4>Design Inspiration</h4>
+                            <p>Drawing from Indian architectural geometry and contemporary restraint, our silhouettes balance heritage warmth with modern wearability.</p>
+                        </div>
+                        <div class="story-pillar">
+                            <h4>Brand Philosophy</h4>
+                            <p>We believe fine jewellery is not merely an ornament, but an intimate expression of identity and grace meant to be cherished across seasons. <em>(Independent educational frontend demonstration.)</em></p>
+                        </div>
+                        <div class="story-pillar">
+                            <h4>Attention to Detail</h4>
+                            <p>From the curve of a bezel to the balance of a clasp, every millimeter is considered so each piece rests effortlessly against the skin.</p>
+                        </div>
+                        <div class="story-pillar">
+                            <h4>Jewellery Craftsmanship</h4>
+                            <p>Traditional hand-finishing techniques meet modern precision, bringing out the natural warmth of gold-toned metals and luminous stones.</p>
+                        </div>
+                        <div class="story-pillar">
+                            <h4>Timeless Elegance</h4>
+                            <p>Designed beyond fleeting trends, our silhouettes remain effortlessly relevant from intimate evenings to grand milestones.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WHY CHOOSE US ========== -->
+    <section id="why-choose" class="why-choose bg-charcoal">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">The Experience</span>
+                <h2 class="section-title">Why Choose Us</h2>
+                <div class="section-divider"><span class="divider-diamond">◇</span></div>
+            </div>
+            <div class="features-grid reveal">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <h3>Thoughtful Craftsmanship</h3>
+                    <p>Every piece in our showcase is curated for balanced proportions, refined silhouettes, and enduring visual appeal.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Bespoke Pre-Order Care</h3>
+                    <p>Personalised design enquiries allow you to specify custom preferences, budget, and preferred contact method.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3>Transparent Demo Pricing</h3>
+                    <p>Clear INR (₹) demonstration pricing across every category so you can explore collections effortlessly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3>Direct WhatsApp Concierge</h3>
+                    <p>Seamless enquiry handoff directly to WhatsApp with formatted product and custom requirement details.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <h3>Curated Wishlist</h3>
+                    <p>Save your favourite pieces locally in your browser and revisit your curated shortlist anytime.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <h3>Dedicated Guidance</h3>
+                    <p>Guided assistance for bridal, festive, and everyday luxury styling tailored to your occasion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DEMO TESTIMONIALS CAROUSEL ========== -->
+    <section id="testimonials" class="testimonials bg-deep">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Sample / Demo Testimonials</span>
+                <h2 class="section-title">Admirer Reflections</h2>
+                <div class="section-divider"><span class="divider-diamond">◇</span></div>
+                <p class="section-desc">Sample admirer reviews created for this educational frontend demonstration showcase.</p>
+            </div>
+            <div class="testimonial-carousel reveal" aria-roledescription="carousel">
+                <button class="carousel-nav carousel-prev" id="testimonialPrev" aria-label="Previous Testimonial">‹</button>
+                <div class="testimonial-viewport">
+                    <div class="testimonial-track" id="testimonialTrack">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text">"The aesthetic and detailing of the bridal choker showcase felt effortlessly regal. Exploring the collection was a delight."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">P</div>
+                                <div>
+                                    <h4>Priya S.</h4>
+                                    <span>Sample Demo Review • Mumbai</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text">"The solitaire ring quick-view and multi-angle zoom gallery made comparing designs smooth and intuitive."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">A</div>
+                                <div>
+                                    <h4>Anita R.</h4>
+                                    <span>Sample Demo Review • Hyderabad</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text">"Submitting a custom bangle enquiry via WhatsApp took seconds, with every detail neatly formatted."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">R</div>
+                                <div>
+                                    <h4>Rajesh M.</h4>
+                                    <span>Sample Demo Review • Delhi</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="testimonial-text">"Saving favourites to my wishlist and filtering by INR budget made curating my shortlist effortless."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">S</div>
+                                <div>
+                                    <h4>Sneha K.</h4>
+                                    <span>Sample Demo Review • Pune</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-nav carousel-next" id="testimonialNext" aria-label="Next Testimonial">›</button>
+            </div>
+            <div class="carousel-dots" id="testimonialDots" aria-label="Testimonial slides"></div>
+        </div>
+    </section>
+
+    <!-- ========== JEWELLERY INSPIRATION GALLERY ========== -->
+    <section id="gallery" class="gallery bg-charcoal">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Visual Splendour</span>
+                <h2 class="section-title">Jewellery Inspiration Gallery</h2>
+                <div class="section-divider"><span class="divider-diamond">◇</span></div>
+            </div>
+            <div class="gallery-grid reveal">
+                <div class="gallery-item gallery-item-tall">
+                    <img src="assets/images/bridal-model.jpg" alt="Indian bride wearing traditional bridal gold jewellery" loading="lazy">
+                    <div class="gallery-overlay"><span>Bridal Grandeur</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/rings-hand-model.jpg" alt="Diamond solitaire and gold ring on black velvet" loading="lazy">
+                    <div class="gallery-overlay"><span>Diamond Solitaires</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/atelier-craft.jpg" alt="Fine jewellery craftsmanship on black velvet" loading="lazy">
+                    <div class="gallery-overlay"><span>Atelier Craftsmanship</span></div>
+                </div>
+                <div class="gallery-item gallery-item-wide">
+                    <img src="assets/images/gold-necklace-model.jpg" alt="Indian model wearing gold heritage necklace" loading="lazy">
+                    <div class="gallery-overlay"><span>Gold Heritage</span></div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/earrings-model.jpg" alt="Indian model wearing chandelier earrings" loading="lazy">
+                    <div class="gallery-overlay"><span>Statement Earrings</span></div>
+                </div>
+                <div class="gallery-item gallery-item-tall">
+                    <img src="assets/images/bangles-model.jpg" alt="Indian model wearing crafted gold bangles" loading="lazy">
+                    <div class="gallery-overlay"><span>Bangle Artistry</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section id="faq" class="faq bg-deep">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Concierge Guide</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="section-divider"><span class="divider-diamond">◇</span></div>
+            </div>
+            <div class="faq-list reveal">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How does the Pre-Order Enquiry system work?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Fill out the Pre-Order Enquiry form with your contact information, chosen category, product, budget, and any custom notes. Clicking Submit validates your inputs, formats your enquiry, and opens a pre-filled WhatsApp chat directly with the configured shop number. No data is stored on a backend server.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Are the prices and availability shown live?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>This is an independent student demonstration project. All prices in Indian Rupees (₹), specifications, and availability labels are sample demonstration data for showcase purposes.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How is my Wishlist saved?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Your wishlist is stored locally in your browser using localStorage, so your curated shortlist persists even when you refresh or reopen the page.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I request custom design preferences in my enquiry?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. Use the Custom Design Requirements field in the Pre-Order form to describe engraving, sizing, stone preferences, or occasion notes — it will be included automatically in your WhatsApp enquiry message.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How can I search or filter the collection?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You can use the search icon in the navigation bar or the smart filter bar inside the Collections section to search by product name, filter by category and INR price range, and sort by price or newest arrivals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== JEWELLERY CONSULTATION SECTION ========== -->
+    <section id="consultation" class="consultation-section bg-charcoal">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Private Styling Concierge</span>
+                <h2 class="section-title">Find Your Perfect Expression.</h2>
+                <div class="section-divider"><span class="divider-diamond">◇</span></div>
+                <p class="section-desc">Select an occasion below to connect directly on WhatsApp for personalised styling guidance.</p>
+            </div>
+
+            <div class="consultation-grid reveal">
+                <div class="consultation-occasions" id="consultationOccasions">
+                    <button type="button" class="occasion-card active" data-occasion="Wedding Jewellery">
+                        <span class="occasion-icon">✦</span>
+                        <h4>Wedding Jewellery</h4>
+                        <p>Bridal haars, chokers &amp; ceremonial ensembles</p>
+                    </button>
+                    <button type="button" class="occasion-card" data-occasion="Engagement Rings">
+                        <span class="occasion-icon">◆</span>
+                        <h4>Engagement Rings</h4>
+                        <p>Solitaires, halos &amp; timeless promise bands</p>
+                    </button>
+                    <button type="button" class="occasion-card" data-occasion="Anniversary Gifts">
+                        <span class="occasion-icon">◇</span>
+                        <h4>Anniversary Gifts</h4>
+                        <p>Milestone pendants, bracelets &amp; drops</p>
+                    </button>
+                    <button type="button" class="occasion-card" data-occasion="Custom Jewellery">
+                        <span class="occasion-icon">✧</span>
+                        <h4>Custom Jewellery</h4>
+                        <p>Bespoke proportions &amp; personalised finishes</p>
+                    </button>
+                    <button type="button" class="occasion-card" data-occasion="Everyday Luxury">
+                        <span class="occasion-icon">◈</span>
+                        <h4>Everyday Luxury</h4>
+                        <p>Effortless minimal gold &amp; diamond accents</p>
+                    </button>
+                </div>
+
+                <form id="consultationForm" class="consultation-form" novalidate>
+                    <h3>Request a Private Consultation</h3>
+                    <p class="consultation-selected">Selected Occasion: <strong id="selectedOccasionLabel">Wedding Jewellery</strong></p>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="consultName">Your Name <span class="required">*</span></label>
+                            <input type="text" id="consultName" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="consultMobile">Mobile Number <span class="required">*</span></label>
+                            <input type="tel" id="consultMobile" inputmode="numeric" autocomplete="tel" placeholder="10-digit mobile number" maxlength="10" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="consultNotes">Styling Preferences (Optional)</label>
+                        <textarea id="consultNotes" rows="3" placeholder="Share preferred metal tone, occasion date, or design inspiration..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full btn-shimmer">
+                        <span>Connect via WhatsApp Concierge</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DEDICATED WISHLIST SECTION ========== -->
+    <section id="wishlist-section" class="wishlist-page-section bg-deep">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Saved Favourites</span>
+                <h2 class="section-title">Your Curated Wishlist</h2>
+                <div class="section-divider"><span class="divider-diamond">◇</span></div>
+                <p class="section-desc">Saved locally in your browser so your shortlist remains available across visits.</p>
+            </div>
+            <div class="products-grid" id="wishlistSectionGrid"></div>
+            <div class="empty-results" id="wishlistSectionEmpty" style="display: none;">
+                <span class="empty-diamond">◇</span>
+                <h3>Your Wishlist Is Empty</h3>
+                <p>Tap the heart icon on any piece in our collections to curate your personal shortlist.</p>
+                <a href="#collections" class="btn btn-secondary">Browse Collections</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CUSTOM PRE-ORDER EXPERIENCE ========== -->
+    <section id="preorder" class="preorder bg-charcoal">
+        <div class="container">
+            <div class="preorder-wrapper">
+                <div class="preorder-info reveal">
+                    <span class="section-tag">Bespoke Concierge</span>
+                    <h2 class="section-title">Custom Pre-Order Enquiry</h2>
+                    <div class="section-divider section-divider-left"><span class="divider-diamond">◇</span></div>
+                    <p>Share your preferences below to generate a formatted pre-order enquiry. Submitting will open WhatsApp with your details ready to send — no backend or online payment required.</p>
+                    <div class="preorder-highlights">
+                        <div class="highlight">
+                            <span class="highlight-icon">✦</span>
+                            <span>Frontend-Only Enquiry System (Demo)</span>
+                        </div>
+                        <div class="highlight">
+                            <span class="highlight-icon">✦</span>
+                            <span>Instant Formatted WhatsApp Message</span>
+                        </div>
+                        <div class="highlight">
+                            <span class="highlight-icon">✦</span>
+                            <span>Custom Design & Budget Preferences</span>
+                        </div>
+                        <div class="highlight">
+                            <span class="highlight-icon">✦</span>
+                            <span>Flexible Contact Method Selection</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="preorder-form-container reveal">
+                    <form id="preorderForm" class="preorder-form" novalidate>
+                        <h3 class="form-title">Pre-Order Enquiry Form</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="customerName">Customer Name <span class="required">*</span></label>
+                                <input type="text" id="customerName" placeholder="Enter your full name" required>
+                                <span class="form-error" id="nameError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="customerMobile">Mobile Number <span class="required">*</span></label>
+                                <input type="tel" id="customerMobile" inputmode="numeric" autocomplete="tel" placeholder="10-digit mobile number" required maxlength="10">
+                                <span class="form-error" id="mobileError"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="customerEmail">Email Address <span class="optional">(optional)</span></label>
+                                <input type="email" id="customerEmail" placeholder="you@example.com">
+                                <span class="form-error" id="emailError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactMethod">Preferred Contact Method <span class="required">*</span></label>
+                                <select id="contactMethod" required>
+                                    <option value="WhatsApp">WhatsApp</option>
+                                    <option value="Phone Call">Phone Call</option>
+                                    <option value="Email">Email</option>
+                                </select>
+                                <span class="form-error" id="contactMethodError"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="jewelleryCategory">Jewellery Category <span class="required">*</span></label>
+                                <select id="jewelleryCategory" required>
+                                    <option value="">Select Category</option>
+                                    <option value="Gold Jewellery">Gold Jewellery</option>
+                                    <option value="Diamond Jewellery">Diamond Jewellery</option>
+                                    <option value="Bridal Jewellery">Bridal Jewellery</option>
+                                    <option value="Necklaces">Necklaces</option>
+                                    <option value="Rings">Rings</option>
+                                    <option value="Earrings">Earrings</option>
+                                    <option value="Bangles">Bangles</option>
+                                    <option value="Bracelets">Bracelets</option>
+                                </select>
+                                <span class="form-error" id="categoryError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="productSelect">Product Selection <span class="required">*</span></label>
+                                <select id="productSelect" required>
+                                    <option value="">Select Product</option>
+                                </select>
+                                <span class="form-error" id="productError"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="budget">Budget Range (₹) <span class="required">*</span></label>
+                                <select id="budget" required>
+                                    <option value="">Select Budget Range</option>
+                                    <option value="Under ₹1,00,000">Under ₹1,00,000</option>
+                                    <option value="₹1,00,000 – ₹2,50,000">₹1,00,000 – ₹2,50,000</option>
+                                    <option value="₹2,50,000 – ₹4,50,000">₹2,50,000 – ₹4,50,000</option>
+                                    <option value="Above ₹4,50,000">Above ₹4,50,000</option>
+                                </select>
+                                <span class="form-error" id="budgetError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="preferredDesign">Preferred Design <span class="optional">(optional)</span></label>
+                                <select id="preferredDesign">
+                                    <option value="As Shown in Catalogue">As Shown in Catalogue</option>
+                                    <option value="Temple Heritage">Temple Heritage</option>
+                                    <option value="Modern Solitaire">Modern Solitaire</option>
+                                    <option value="Bridal Kundan / Jadau">Bridal Kundan / Jadau</option>
+                                    <option value="Minimalist Contemporary">Minimalist Contemporary</option>
+                                    <option value="Custom Bespoke Design">Custom Bespoke Design</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customRequirements">Additional Requirements</label>
+                            <textarea id="customRequirements" rows="3" placeholder="Describe ring/bangle size, finish preference, engraving, or occasion details..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full btn-shimmer">
+                            <span>Send Enquiry via WhatsApp</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== NEWSLETTER UI (DEMO ONLY) ========== -->
+    <section class="newsletter-section bg-deep">
+        <div class="container">
+            <div class="newsletter-box reveal">
+                <span class="section-tag">Private Invitations • Demo Only</span>
+                <h2>Join The Maison Journal</h2>
+                <p>Receive curated previews of upcoming collections and editorial lookbooks. (Frontend UI demonstration only — no emails are stored or sent.)</p>
+                <form id="newsletterForm" class="newsletter-form">
+                    <input type="email" id="newsletterEmail" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section id="contact" class="contact bg-charcoal">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Private Concierge</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="section-divider"><span class="divider-diamond">◇</span></div>
+                <p class="section-desc">We would love to assist you with your jewellery enquiries.</p>
+            </div>
+
+            <div class="contact-layout">
+                <!-- Premium Contact Card -->
+                <div class="premium-contact-card reveal">
+                    <div class="contact-card-brand">
+                        <span class="logo-icon">✦</span>
+                        <span>TANISHQ – Fine Jewellery</span>
+                    </div>
+                    <h3 class="contact-card-title">Get In Touch</h3>
+                    <p class="contact-card-subtitle">We would love to assist you with your jewellery enquiries.</p>
+
+                    <div class="whatsapp-number-box">
+                        <span class="wa-label">Official WhatsApp Concierge</span>
+                        <a href="https://wa.me/918102592130" target="_blank" rel="noopener" class="wa-number-display" id="contactWaDisplay">+91 8102592130</a>
+                    </div>
+
+                    <div class="contact-options-grid">
+                        <a href="https://wa.me/918102592130" target="_blank" rel="noopener" class="contact-option-item" id="contactOptionWa">
+                            <span class="option-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </span>
+                            <div>
+                                <h4>WhatsApp Enquiry</h4>
+                                <span>+91 8102592130</span>
+                            </div>
+                        </a>
+                        <a href="tel:+918102592130" class="contact-option-item" id="contactCallLink">
+                            <span class="option-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </span>
+                            <div>
+                                <h4>Call Us</h4>
+                                <span>+91 8102592130</span>
+                            </div>
+                        </a>
+                        <a href="#consultation" class="contact-option-item">
+                            <span class="option-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            </span>
+                            <div>
+                                <h4>Jewellery Consultation</h4>
+                                <span>Personalised Guidance</span>
+                            </div>
+                        </a>
+                        <a href="#preorder" class="contact-option-item">
+                            <span class="option-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                            </span>
+                            <div>
+                                <h4>Pre-Order Assistance</h4>
+                                <span>Custom &amp; Bespoke Orders</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-full btn-shimmer chat-team-btn" id="chatWithTeamBtn">
+                        <span>CHAT WITH OUR TEAM</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    </button>
+                </div>
+
+                <!-- Contact Enquiry Form -->
+                <div class="contact-form-card reveal">
+                    <form id="contactForm" class="contact-form" novalidate>
+                        <h3 class="form-title">Send a Direct Enquiry</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Full Name <span class="required">*</span></label>
+                                <input type="text" id="contactName" placeholder="Enter your full name" required>
+                                <span class="form-error" id="contactNameError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactMobile">Mobile Number <span class="required">*</span></label>
+                                <input type="tel" id="contactMobile" inputmode="numeric" autocomplete="tel" placeholder="10-digit mobile number" maxlength="10" required>
+                                <span class="form-error" id="contactMobileError"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactEmail">Email Address <span class="optional">(optional)</span></label>
+                                <input type="email" id="contactEmail" placeholder="you@example.com">
+                                <span class="form-error" id="contactEmailError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactSubject">Enquiry Subject <span class="required">*</span></label>
+                                <select id="contactSubject" required>
+                                    <option value="">Select Subject</option>
+                                    <option value="Product & Pricing Enquiry">Product &amp; Pricing Enquiry</option>
+                                    <option value="Bridal & Wedding Collection">Bridal &amp; Wedding Collection</option>
+                                    <option value="Custom Jewellery Design">Custom Jewellery Design</option>
+                                    <option value="Pre-Order Assistance">Pre-Order Assistance</option>
+                                    <option value="General Concierge">General Concierge</option>
+                                </select>
+                                <span class="form-error" id="contactSubjectError"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message <span class="required">*</span></label>
+                            <textarea id="contactMessage" rows="4" placeholder="Write your jewellery enquiry or questions..." required></textarea>
+                            <span class="form-error" id="contactMessageError"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full btn-shimmer">
+                            <span>Send Enquiry</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Office-Style Configurable Info Cards -->
+            <div class="contact-grid contact-office-grid reveal">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D4AF67" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <h3>Showroom Address</h3>
+                    <p id="configAddress">Showroom Address Placeholder<br><span class="placeholder-note">(Configurable in config.js)</span></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D4AF67" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <h3>Electronic Mail</h3>
+                    <p id="configEmail">concierge@placeholder-domain.example<br><span class="placeholder-note">(Configurable in config.js)</span></p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D4AF67" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3>Business Hours</h3>
+                    <p id="configHours">Business Hours Placeholder<br><span class="placeholder-note">(Configurable in config.js)</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PREMIUM FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#home" class="footer-logo">
+                        <span class="logo-icon">✦</span>
+                        <span class="logo-text">TANISHQ</span>
+                    </a>
+                    <p class="footer-tagline">Fine Jewellery — Where Elegance Becomes Eternal. An ultra-luxury digital showcase crafted for timeless artistry.</p>
+                    <div class="footer-social">
+                        <a href="#contact" class="social-link" aria-label="Instagram Placeholder" title="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="#contact" class="social-link" aria-label="Facebook Placeholder" title="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#contact" class="social-link" aria-label="YouTube Placeholder" title="YouTube">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                        </a>
+                        <a id="footerWhatsappLink" href="https://wa.me/918102592130" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp Contact" title="Chat on WhatsApp">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#collections">Collections</a></li>
+                        <li><a href="#new-arrivals">New Arrivals</a></li>
+                        <li><a href="#best-sellers">Best Sellers</a></li>
+                        <li><a href="#our-story">Our Story</a></li>
+                        <li><a href="#preorder">Pre-Order Enquiry</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#collections" data-footer-filter="gold">Gold Jewellery</a></li>
+                        <li><a href="#collections" data-footer-filter="diamond">Diamond Jewellery</a></li>
+                        <li><a href="#collections" data-footer-filter="bridal">Bridal Jewellery</a></li>
+                        <li><a href="#collections" data-footer-filter="necklaces">Necklaces</a></li>
+                        <li><a href="#collections" data-footer-filter="rings">Rings</a></li>
+                        <li><a href="#collections" data-footer-filter="earrings">Earrings & Bangles</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="#contact">Get In Touch</a></li>
+                        <li><a href="tel:+918102592130">+91 8102592130</a></li>
+                        <li><a id="footerWhatsappText" href="https://wa.me/918102592130" target="_blank" rel="noopener">WhatsApp Concierge</a></li>
+                        <li><a href="#faq">FAQ & Guide</a></li>
+                        <li><a href="#gallery">Inspiration Gallery</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TANISHQ Fine Jewellery. All rights reserved.</p>
+                <p class="footer-disclaimer">Important: This is an independent educational frontend demonstration project, not an official Tanishq website or an affiliated sales channel.</p>
+                <a href="#home" class="back-to-top-btn" id="backToTop" aria-label="Back to Top">
+                    <span>Back to Top</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== PRODUCT DETAIL MODAL (WITH MULTI-IMAGE GALLERY) ========== -->
+    <div class="modal-overlay" id="productModal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" id="modalClose" aria-label="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <div class="modal-image-container" id="modalImageContainer">
+                        <img id="modalImage" src="" alt="Product Image" class="modal-image">
+                        <span class="modal-badge" id="modalBadge"></span>
+                        <button type="button" class="modal-zoom-btn" id="modalZoomBtn" aria-label="Toggle Image Zoom" title="Zoom Image">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                        </button>
+                    </div>
+                    <div class="modal-thumbnails" id="modalThumbnails">
+                        <!-- Multi-image thumbnails injected by JS -->
+                    </div>
+                </div>
+                <div class="modal-details">
+                    <span class="modal-category" id="modalCategory"></span>
+                    <h2 class="modal-title" id="modalTitle"></h2>
+                    <div class="modal-price-row">
+                        <p class="modal-price" id="modalPrice"></p>
+                        <span class="demo-tag">Demo Price</span>
+                    </div>
+                    <div class="modal-availability" id="modalAvailability"></div>
+                    <p class="modal-description" id="modalDescription"></p>
+                    <div class="modal-specs">
+                        <div class="spec"><span class="spec-label">Material Info</span><span class="spec-value" id="modalMaterial"></span></div>
+                        <div class="spec"><span class="spec-label">Design Style</span><span class="spec-value" id="modalDesign"></span></div>
+                        <div class="spec"><span class="spec-label">Approx. Weight</span><span class="spec-value" id="modalWeight"></span></div>
+                        <div class="spec"><span class="spec-label">Category</span><span class="spec-value" id="modalType"></span></div>
+                    </div>
+                    <div class="modal-sizes-wrap" id="modalSizesWrap">
+                        <span class="spec-label">Available Size Options (Demo)</span>
+                        <div class="modal-sizes" id="modalSizes"></div>
+                    </div>
+                    <div class="modal-actions">
+                        <a href="#preorder" class="btn btn-primary modal-preorder-btn" id="modalPreorder">
+                            <span>Pre-Order Now</span>
+                        </a>
+                        <button class="btn btn-secondary modal-wishlist-btn" id="modalWishlistBtn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            <span>Add to Wishlist</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== WISHLIST SIDEBAR ========== -->
+    <div class="wishlist-overlay" id="wishlistOverlay"></div>
+    <aside class="wishlist-sidebar" id="wishlistSidebar" aria-label="Wishlist Drawer">
+        <div class="wishlist-header">
+            <h3>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#D4AF37" stroke="#D4AF37" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                My Wishlist
+            </h3>
+            <button class="wishlist-close" id="wishlistClose" aria-label="Close Wishlist">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <div class="wishlist-items" id="wishlistItems"></div>
+        <div class="wishlist-empty" id="wishlistEmpty">
+            <div class="wishlist-empty-icon">◇</div>
+            <p>Your Wishlist Awaits</p>
+            <span>Curate your favourite gold, diamond, and bridal pieces here. Your selections are preserved across visits.</span>
+            <a href="#collections" class="btn btn-secondary btn-sm" id="wishlistExploreBtn">Explore Collections</a>
+        </div>
+    </aside>
+
+    <!-- ========== NOTIFICATION TOAST ========== -->
+    <div class="notification" id="notification" role="status" aria-live="polite">
+        <div class="notification-content">
+            <span class="notification-icon">✦</span>
+            <span class="notification-text" id="notificationText"></span>
+        </div>
+    </div>
+
+    <!-- ========== MOBILE BOTTOM NAVIGATION BAR ========== -->
+    <nav class="mobile-bottom-nav" id="mobileBottomNav" aria-label="Mobile Quick Navigation">
+        <a href="#home" class="bottom-nav-item active" data-section="home">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span>Home</span>
+        </a>
+        <a href="#collections" class="bottom-nav-item" data-section="collections">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            <span>Collections</span>
+        </a>
+        <a href="#wishlist-section" class="bottom-nav-item" data-section="wishlist-section">
+            <div class="bottom-nav-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                <span class="bottom-wishlist-badge" id="bottomWishlistCount">0</span>
+            </div>
+            <span>Wishlist</span>
+        </a>
+        <a href="#contact" class="bottom-nav-item" data-section="contact">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>Contact</span>
+        </a>
+    </nav>
+
+    <script src="config.js"></script>
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

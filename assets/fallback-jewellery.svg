@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#1a1610"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9B7B22"/>
+      <stop offset="50%" stop-color="#E8D5A3"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="800" fill="url(#bg)"/>
+  <rect x="28" y="28" width="744" height="744" fill="none" stroke="url(#gold)" stroke-opacity="0.28" stroke-width="1"/>
+  <g transform="translate(400,360)" fill="none" stroke="url(#gold)">
+    <polygon points="0,-110 95,-15 0,110 -95,-15" stroke-width="2.2"/>
+    <polygon points="0,-72 62,-10 0,72 -62,-10" stroke-width="1.2" stroke-opacity="0.7"/>
+    <line x1="-95" y1="-15" x2="95" y2="-15" stroke-width="1.2" stroke-opacity="0.6"/>
+    <line x1="0" y1="-110" x2="0" y2="110" stroke-width="1" stroke-opacity="0.45"/>
+  </g>
+  <text x="400" y="545" text-anchor="middle" fill="#D4AF37" font-family="Georgia, serif" font-size="38" letter-spacing="12">TANISHQ</text>
+  <text x="400" y="590" text-anchor="middle" fill="#A89F91" font-family="Georgia, serif" font-size="16" letter-spacing="6">FINE JEWELLERY</text>
+</svg>
